@@ -13,28 +13,18 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite(CH_8, LOW);
-  digitalWrite(CH_1, HIGH);
-  delay(1000);
-  digitalWrite(CH_1, LOW);
-  digitalWrite(CH_2, HIGH);
-  delay(1000);
-  digitalWrite(CH_2, LOW);
-  digitalWrite(CH_3, HIGH);
-  delay(1000);
-  digitalWrite(CH_3, LOW);
-  digitalWrite(CH_4, HIGH);
-  delay(1000);
-  digitalWrite(CH_4, LOW);
-  digitalWrite(CH_5, HIGH);
-  delay(1000);
-  digitalWrite(CH_5, LOW);
-  digitalWrite(CH_6, HIGH);
-  delay(1000);
-  digitalWrite(CH_6, LOW);
-  digitalWrite(CH_7, HIGH);
-  delay(1000);
-  digitalWrite(CH_7, LOW);
-  digitalWrite(CH_8, HIGH);
-  delay(1000);
+  pulse(CH_8, 1);
+  pulse(CH_7, 1);
+  pulse(CH_6, 1);
+  pulse(CH_5, 1);
+  pulse(CH_4, 1);
+  pulse(CH_3, 1);
+  pulse(CH_2, 1);
+  pulse(CH_1, 1);
+}
+
+void pulse(int channel, int lengthInSec) {
+  digitalWrite(channel, HIGH);
+  delay(lengthInSec*1000);
+  digitalWrite(channel, LOW);
 }
